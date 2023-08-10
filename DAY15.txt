@@ -1,0 +1,167 @@
+1.SQL queries performed
+
+1.CREATE TABLE TEN24LIB/SEMP3 (EMPID DECIMAL (6 , 0) NOT NULL WITH     
+DEFAULT, NAME CHAR (20 ) NOT NULL WITH DEFAULT, SALARY DECIMAL (8 ,  
+2) NOT NULL WITH DEFAULT)                                            
+Table SEMP3 in TEN24LIB created but was not journaled.               
+INSERT INTO TEN24LIB/SEMP3 VALUES(1, 'KARTHIKA', 45678)              
+1 rows inserted in SEMP3 in TEN24LIB.                                
+2.SELECT * FROM TEN24LIB/EMPLOYEE                                      
+SELECT statement run complete.                                       
+4.SELECT EMPID,DEPT,NAME,GENDER FROM TEN24LIB/EMPLOYEE                 
+SELECT statement run complete.     
+5.SELECT * FROM TEN24LIB/EMPLOYEE                                        
+SELECT statement run complete.                                         
+6.SELECT EMPID,DEPT,NAME,GENDER FROM TEN24LIB/EMPLOYEE                   
+SELECT statement run complete.                                         
+7.SELECT * FROM TEN24LIB/EMPLOYEE WHERE SALARY>100000                    
+SELECT statement run complete.                                         
+8.SELECT * FROM TEN24LIB/EMPLOYEE WHERE DEPT=20 AND GENDER='M'           
+SELECT statement run complete.                                         
+9.SELECT *FROM TEN24LIB/EMPLOYEE WHERE EMPID=101 OR EMPID=406            
+SELECT statement run complete.                                         
+10.SELECT * FROM TEN24LIB/EMPLOYEE WHERE SALARY>50000 AND SALARY<200000   
+SELECT statement run complete.        
+11.SELECT * FROM TEN24LIB/EMPLOYEE WHERE SALARY BETWEEN 50000 AND 20000   
+0                                                                      
+SELECT statement run complete.                                         
+12.SELECT * FROM TEN24LIB/EMPLOYEE WHERE SALARY NOT BETWEEN 50000 AND 2   
+00000  
+SELECT statement run complete.   
+13.SELECT * FROM TEN24LIB/EMPLOYEE WHERE DOJ BETWEEN '05/08/22' AND '05  
+/09/23' 
+SELECT statement run complete.                                                              
+14.SELECT * FROM EMPLOYEE WHERE NAME LIKE 'MANI%' 
+SELECT statement run complete.
+15.SELECT * FROM EMPLOYEE WHERE NAME LIKE 'MANI%'           
+SELECT statement run complete.                           
+16.SELECT * FROM EMPLOYEE WHERE NAME LIKE '___I%'           
+SELECT statement run complete.                           
+17.SELECT * FROM EMPLOYEE WHERE NAME NOT LIKE '%B'          
+SELECT statement run complete.                           
+18.SELECT * FROM EMPLOYEE WHERE NAME NOT LIKE 'B%'          
+SELECT statement run complete.                           
+19.SELECT * FROM EMPLOYEE WHERE DEPT IN (10,20,30)          
+SELECT statement run complete.                           
+20.UPDATE EMPLOYEE SET NAME='maninder' WHERE NAME='MANINDER'
+1 rows updated in EMPLOYEE in TEN24LIB.      
+21.UPDATE EMPLOYEE SET NAME='MANINDER' WHERE NAME='MANI'
+2 rows updated in EMPLOYEE in TEN24LIB.
+22.SELECT * FROM EMPLOYEE WHERE UPPER(NAME)='MANINDER' 
+SELECT statement run complete.  
+23.SELECT * FROM EMPLOYEE ORDER BY SALARY
+SELECT statement run complete.    
+24.SELECT * FROM EMPLOYEE ORDER BY SALARY DESC  
+SELECT statement run complete. 
+25.SELECT * FROM EMPLOYEE ORDER BY NAME DESC
+SELECT statement run complete.           
+26.SELECT * FROM EMPLOYEE ORDER BY NAME 
+SELECT statement run complete.       
+27.SELECT * FROM EMPLOYEE WHERE DEPT=20 ORDER BY NAME DESC
+SELECT statement run complete.                         
+28.SELECT * FROM EMPLOYEE ORDER BY DEPT,NAME
+SELECT statement run complete.           
+29.SELECT SUM(SALARY), MAX(SALARY), MIN(SALARY), AVG(SALARY), COUNT(*) 
+FROM EMPLOYEE                                                       
+SELECT statement run complete.                                      
+30.SELECT DEPT,SUM(SALARY) , MAX(SALARY) , COUNT(*) FROM EMPLOYEE GROUP
+ BY DEPT                                                            
+SELECT statement run complete.                                      
+31.SELECT SUM(SALARY), COUNT(*), DEPT FROM EMPLOYEE WHERE GENDER='M' GR
+OUP BY DEPT                                                         
+SELECT statement run complete.                                      
+32.SELECT SUM(SALARY), COUNT(*), DEPT FROM EMPLOYEE WHERE GENDER='M' GR
+OUP BY DEPT HAVING COUNT(*)=6                                       
+SELECT statement run complete.    
+33.SELECT * FROM EMPLOYEE WHERE SALARY=(SELECT MAX(SALARY) FROM EMPLOYE
+E)                                                                  
+SELECT statement run complete.                                      
+34.SELECT * FROM EMPLOYEE WHERE SALARY<(SELECT MAX(SALARY) FROM EMPLOYE
+E)                                                                  
+SELECT statement run complete.     
+35.SELECT * FROM EMPLOYEE WHERE SALARY=(SELECT MAX(SALARY) FROM EMPLOYE
+E WHERE SALARY<(SELECT MAX(SALARY) FROM EMPLOYEE))                  
+SELECT statement run complete.
+36.INSERT INTO TEN24LIB/EMPLOYEE VALUES(123456, 'PRAKIT', 30, 'M',
+'12.03.2021', 560000)                                          
+1 rows inserted in EMPLOYEE in TEN24LIB.                       
+37. INSERT INTO TEN24LIB/EMPLOYEE (EMPID, NAME, GENDER, DOJ, SALARY)
+ VALUES(654321, 'SALMAN', 'M', '16.09.2020', 85000)              
+ 1 rows inserted in EMPLOYEE in TEN24LIB.  
+38.DELETE IFSEMP                                     
+74 rows deleted from IFSEMP in TEN24LIB.          
+39.INSERT INTO TEN24LIB/IFSEMP SELECT * FROM EMPLOYEE
+76 rows inserted in IFSEMP in TEN24LIB.      
+40.INSERT INTO TEN24LIB/IFSEMP (NAME, EMPID, GENDER, DOJ, SALARY)    
+SELECT NAME,EMPID,GENDER,DOJ,SALARY FROM EMPLOYEE WHERE GENDER='F'
+38 rows inserted in IFSEMP in TEN24LIB.        
+41.UPDATE EMPLOYEE SET SALARY=(SALARY*1.1) WHERE GENDER='F'
+38 rows updated in EMPLOYEE in TEN24LIB.                
+42. UPDATE TEN24LIB/EMPLOYEE SET NAME =                    
+ CONCAT(UPPER(SUBSTR(NAME,1,1)),LOWER(SUBSTR(NAME,2)))  
+ 76 rows updated in EMPLOYEE in TEN24LIB.               
+43.UPDATE EMPLOYEE SET NAME=LOWER(NAME)              
+76 rows updated in EMPLOYEE in TEN24LIB.                     
+44.UPDATE EMPLOYEE SET NAME=UPPER(NAME) WHERE DEPT=40
+10 rows updated in EMPLOYEE in TEN24LIB.                                                        
+                                           
+2.Program to print 'MALAYALAM' using DOFOR loop.
+
+
+ Columns . . . :    1  71            Edit                      TEN24LIB/TRNGSRC 
+ SEU==>                                                                FORLOOPC 
+ FMT **  ...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7  
+        *************** Beginning of data ************************************* 
+0001.00 PGM                                                                     
+0002.00              DCL        VAR(&NUM) TYPE(*INT) LEN(4)                     
+0002.01   DCL VAR(&MLANG) TYPE(*CHAR) LEN(9) VALUE('MALAYALAM')                 
+0002.02   DCL VAR(&STR) TYPE(*CHAR) LEN(9)                                      
+0003.00              DOFOR      VAR(&NUM) FROM(1) TO(9)                         
+0003.01              CHGVAR VAR(&STR) VALUE(&STR *TCAT %SST(&MLANG &NUM 1))     
+0004.00              SNDPGMMSG  MSG(&STR)                                       
+0005.00              ENDDO                                                      
+0006.00 ENDPGM                                                                  
+        ****************** End of data ****************************************  
+3.Query selection inside a CL program using CPYFRMQRF
+
+
+ Columns . . . :    1  71            Edit                      TEN24LIB/TRNGSRC 
+ SEU==>                                                                NOODPQRY 
+ FMT **  ...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7  
+        *************** Beginning of data ************************************* 
+0001.00 PGM PARM(&FLD &OPR &VAL &KEY &ORD)                                      
+0002.00   DCL VAR(&QRY) TYPE(*CHAR) LEN(50)                                     
+0003.00   DCL VAR(&FLD) TYPE(*CHAR) LEN(10)                                     
+0004.00   DCL VAR(&OPR) TYPE(*CHAR) LEN(2)                                      
+0005.00   DCL VAR(&VAL) TYPE(*CHAR) LEN(20)                                     
+0006.00   DCL VAR(&KEY) TYPE(*CHAR) LEN(10)                                     
+0007.00   DCL VAR(&ORD) TYPE(*CHAR) LEN(8)                                      
+0007.01   CHGVAR VAR(&QRY) VALUE(&FLD *BCAT &OPR *BCAT &VAL)                    
+0008.00              OPNQRYF    FILE((*CURLIB/EMPLOYEE)) QRYSLT(&QRY) +         
+0009.00                           KEYFLD((&KEY &ORD))                           
+0010.00              CPYFRMQRYF FROMOPNID(EMPLOYEE) TOFILE(*CURLIB/EMPREUSE) +  
+0011.00                           MBROPT(*REPLACE)                              
+0012.00   RUNQRY () TEN24LIB/EMPREUSE                                           
+0013.00   CLOF EMPLOYEE                                                         
+0014.00 ENDPGM                                                                  
+        ****************** End of data **************************************** 
+
+4.Program to create a source physical file using RPGLE program.
+
+ Columns . . . :    6  76            Edit                      TEN24LIB/TRNGSRC 
+ SEU==>                                                               RUNCLCMDR 
+ FMT D  DName+++++++++++ETDsFrom+++To/L+++IDc.Keywords+++++++++++++++++++++++++ 
+        *************** Beginning of data ************************************* 
+0001.00 DCMDTXT           S             50A   INZ('CRTSRCPF FILE(')             
+0002.00 DCMDLEN           S             15P 5 INZ(50)                           
+0003.00 C     *ENTRY        PLIST                                               
+0004.00 C                   PARM                    LIBNM            10         
+0005.00 C                   PARM                    SRCPF            10         
+0006.00 C                   EVAL       CMDTXT=%TRIM(CMDTXT)+%TRIM(LIBNM)+'/'+   
+0007.00 C                              %TRIM(SRCPF)+')'                         
+0008.00 C*    CMDTXT        DSPLY                                               
+0008.01 C                   CALL      'QCMDEXC'                                 
+0008.02 C                   PARM                    CMDTXT                      
+0008.03 C                   PARM                    CMDLEN                      
+0009.00 C                   EVAL      *INLR=*ON                                 
+        ****************** End of data ****************************************                                                                                                                                                                                                                                                    
